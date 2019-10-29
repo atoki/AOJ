@@ -8,24 +8,30 @@ using namespace std;
 
 constexpr int MAX = 7368792;
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[]) 
+{
     int m, n;
     bool flag[MAX];
 
-    while (cin>>m>>n, m||n) {
+    while (cin >> m >> n, m || n) 
+    {
         // init
-        for (int i = 0; i < MAX; ++i) {
+        for (int i = 0; i < MAX; ++i) 
+        {
             flag[i] = false;
         }
-        for (int i = 0; i < m; ++i) {
+        for (int i = 0; i < m; ++i)
+        {
             flag[i] = true;
         }
 
         // solve
-        for (int i = m; i < MAX; ++i) {
+        for (int i = m; i < MAX; ++i)
+         {
             if (n == 0) break;
             if (flag[i]) continue;
-            for (int j = i; j < MAX; j += i) {
+            for (int j = i; j < MAX; j += i) 
+            {
                 flag[j] = true;
             }
             n--;
@@ -33,10 +39,11 @@ int main(int argc, char const *argv[]) {
 
         // check
         int k;
-        for (k = 0; k < MAX; ++k) {
+        for (k = 0; k < MAX; ++k) 
+        {
             if (!flag[k]) break;
         }
-        cout<<k<<endl;
+        cout << k << endl;
     }
     return 0;
 }

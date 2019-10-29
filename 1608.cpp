@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <string>
 #include <algorithm>
 
 using namespace std;
@@ -12,7 +11,7 @@ int main(int argc, char const *argv[]) {
         vector<int> a(n);
         for (int i = 0; i < n; ++i) {
             int tmp;
-            cin>>tmp;
+            cin >> tmp;
             a[i] = tmp;
         }
 
@@ -23,7 +22,7 @@ int main(int argc, char const *argv[]) {
             diff = min(diff, a[i+1] - a[i]);
         }
 
-        cout<<diff<<endl;
+        cout << diff << endl;
     }
     return 0;
 }
